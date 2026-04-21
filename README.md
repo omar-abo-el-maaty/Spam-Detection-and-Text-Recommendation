@@ -17,17 +17,57 @@ An NLP-based machine learning project that classifies messages as **Spam or Ham*
 * 📊 Model evaluation (Accuracy, Precision, Recall, F1-score)
 * 🧠 Bigram-based next word recommendation system
 * 💾 Model saving and loading using pickle
-* 🤗 Live demo deployed on Hugging Face
+* 🤗 Deployed on Hugging Face Spaces
 
 ---
 
-## 🤗 Live Demo (Hugging Face)
+## 🚀 Live Demo (Hugging Face)
 
-Try the model directly from your browser:
+### 🌐 Base URL
 
-🔗 https://huggingface.co/spaces/omaraboelmaaty/spam-detection-and-word-recommendation
+```
+https://huggingface.co/spaces/omaraboelmaaty/spam-detection-and-word-recommendation
+```
 
-> This interactive demo allows users to classify messages and get next-word recommendations in real time.
+👉 You can test the model directly from the browser (no setup required).
+
+---
+
+## 📡 API (For Developers)
+
+You can also use the model programmatically.
+
+### 📍 Endpoint
+
+```
+POST /predict
+```
+
+### 🌐 Base URL
+
+```
+https://omaraboelmaaty-spam-detection-and-word-recommendation.hf.space
+```
+
+---
+
+### 📥 Example Request
+
+```json
+{
+  "text": "Free entry win prize now"
+}
+```
+
+---
+
+### 📤 Example Response
+
+```json
+{
+  "prediction": "Spam"
+}
+```
 
 ---
 
@@ -51,18 +91,18 @@ Try the model directly from your browser:
 
 * Train multiple Logistic Regression models
 * Compare performance
-* Select the best model
+* Select best model
 
 ### 4. Recommendation System
 
-* Build unigram & bigram frequency models
+* Build unigram & bigram frequency model
 * Predict next word using probability
 
 ---
 
 ## 📂 Project Structure
 
-```id="9j4xra"
+```
 project/
 │
 ├── spam_classifier.py
@@ -83,7 +123,7 @@ project/
 
 ## ⚙️ Installation
 
-```bash id="d2p6od"
+```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 pip install -r requirements.txt
@@ -93,23 +133,27 @@ pip install -r requirements.txt
 
 ## ▶️ Usage
 
-### Run the model
+### Run locally
 
-```bash id="6d49kk"
+```bash
 python spam_classifier.py
 ```
 
+---
+
 ### Example Prediction
 
-```python id="y5h2ct"
+```python
 text = ["Free entry! Claim your prize now"]
 prediction = model.predict(text)
 print(prediction)
 ```
 
+---
+
 ### Next Word Recommendation
 
-```python id="7m4v2y"
+```python
 complete_sentence("please confirm your")
 ```
 
@@ -123,8 +167,6 @@ complete_sentence("please confirm your")
 | Count  | High     |
 | TF-IDF | Best     |
 
-> The best model is automatically selected and saved.
-
 ---
 
 ## 🛠️ Technologies Used
@@ -135,15 +177,16 @@ complete_sentence("please confirm your")
 * NLTK
 * Scikit-learn
 * Matplotlib
+* Hugging Face Spaces
 
 ---
 
 ## 💡 Future Improvements
 
-* Deploy as a web app (Flask / FastAPI)
-* Use Deep Learning models (LSTM / Transformers)
-* Improve recommendation with advanced language models
-* Add real-time API
+* Deploy as Flask/FastAPI backend
+* Use Transformer models (BERT, GPT)
+* Improve recommendation system
+* Add real-time streaming API
 
 ---
 
