@@ -108,7 +108,6 @@ project/
 ├── spam_classifier.py
 ├── requirements.txt
 ├── README.md
-├── .gitignore
 │
 ├── models/
 │   ├── best_spam_model.pkl
