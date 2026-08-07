@@ -6,36 +6,21 @@ An NLP-based machine learning project that classifies messages as **Spam or Ham*
 
 ## 📌 Features
 
-* 📩 Spam vs Ham classification using Machine Learning
-* 🧹 Text preprocessing (cleaning, tokenization, stemming)
-* 🔢 Multiple vectorization techniques:
-
-  * Binary
-  * Count Vectorizer
-  * TF-IDF
-* 🤖 Logistic Regression models comparison
-* 📊 Model evaluation (Accuracy, Precision, Recall, F1-score)
-* 🧠 Bigram-based next word recommendation system
-* 💾 Model saving and loading using pickle
-* 🤗 Deployed on Hugging Face Spaces
-
----
-
-## 🚀 Live Demo (Hugging Face)
-
-### 🌐 Base URL
-
-```
-https://huggingface.co/spaces/omaraboelmaaty/spam-detection-and-word-recommendation
-```
-
-👉 You can test the model directly from the browser (no setup required).
+- 📩 Spam vs Ham classification using Machine Learning
+- 🧹 Text preprocessing (cleaning, tokenization, stemming)
+- 🔢 Multiple vectorization techniques:
+  - Binary
+  - Count Vectorizer
+  - TF-IDF
+- 🤖 Logistic Regression models comparison
+- 📊 Model evaluation (Accuracy, Precision, Recall, F1-score)
+- 🧠 Bigram-based next word recommendation system
+- 💾 Model saving and loading using pickle
+- ⚡ Served locally via a FastAPI app
 
 ---
 
-## 📡 API (For Developers)
-
-You can also use the model programmatically.
+## 📡 API
 
 ### 📍 Endpoint
 
@@ -43,27 +28,17 @@ You can also use the model programmatically.
 POST /predict
 ```
 
-### 🌐 Base URL
-
-```
-https://omaraboelmaaty-spam-detection-and-word-recommendation.hf.space
-```
-
----
-
 ### 📥 Example Request
 
-```json
+```
 {
   "text": "Free entry win prize now"
 }
 ```
 
----
-
 ### 📤 Example Response
 
-```json
+```
 {
   "prediction": "Spam"
 }
@@ -75,39 +50,39 @@ https://omaraboelmaaty-spam-detection-and-word-recommendation.hf.space
 
 ### 1. Data Preprocessing
 
-* Convert text to lowercase
-* Remove URLs, punctuation, and numbers
-* Remove stopwords
-* Apply stemming
+- Convert text to lowercase
+- Remove URLs, punctuation, and numbers
+- Remove stopwords
+- Apply stemming
 
 ### 2. Feature Extraction
 
-* Convert text into numerical format using:
-
-  * CountVectorizer
-  * TF-IDF
+- Convert text into numerical format using:
+  - CountVectorizer
+  - TF-IDF
 
 ### 3. Model Training
 
-* Train multiple Logistic Regression models
-* Compare performance
-* Select best model
+- Train multiple Logistic Regression models
+- Compare performance
+- Select best model
 
 ### 4. Recommendation System
 
-* Build unigram & bigram frequency model
-* Predict next word using probability
+- Build unigram & bigram frequency model
+- Predict next word using probability
 
 ---
 
 ## 📂 Project Structure
 
 ```
-project/
+Spam-Detection-and-Text-Recommendation/
 │
-├── spam_classifier.py
+├── app.py
 ├── requirements.txt
 ├── README.md
+├── NLP Project_v2.ipynb
 │
 ├── models/
 │   ├── best_spam_model.pkl
@@ -122,9 +97,9 @@ project/
 
 ## ⚙️ Installation
 
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+```
+git clone https://github.com/omar-abo-el-maaty/Spam-Detection-and-Text-Recommendation.git
+cd Spam-Detection-and-Text-Recommendation
 pip install -r requirements.txt
 ```
 
@@ -134,26 +109,21 @@ pip install -r requirements.txt
 
 ### Run locally
 
-```bash
-python spam_classifier.py
+```
+uvicorn app:app --reload
 ```
 
----
+The API will be available at `http://localhost:8000`.
 
-### Example Prediction
+### Example cURL Request
 
-```python
-text = ["Free entry! Claim your prize now"]
-prediction = model.predict(text)
-print(prediction)
 ```
-
----
-
-### Next Word Recommendation
-
-```python
-complete_sentence("please confirm your")
+curl -X POST \
+  http://localhost:8000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "text": "Free entry win prize now"
+  }'
 ```
 
 ---
@@ -170,26 +140,27 @@ complete_sentence("please confirm your")
 
 ## 🛠️ Technologies Used
 
-* Python
-* Pandas
-* NumPy
-* NLTK
-* Scikit-learn
-* Matplotlib
-* Hugging Face Spaces
+- Python
+- Pandas
+- NumPy
+- NLTK
+- Scikit-learn
+- Matplotlib
+- FastAPI
 
 ---
 
 ## 💡 Future Improvements
 
-* Deploy as Flask/FastAPI backend
-* Use Transformer models (BERT, GPT)
-* Improve recommendation system
-* Add real-time streaming API
+- Use Transformer models (BERT, GPT)
+- Improve recommendation system
+- Add real-time streaming API
 
 ---
 
 ## 👨‍💻 Author
 
-Omar Aboelmaaty
+**Omar Mohamed Ahmed Abo Elmaaty**
 
+- GitHub: https://github.com/omaraboelmaaty
+- Hugging Face: https://huggingface.co/omaraboelmaaty
